@@ -1,22 +1,59 @@
 # ERP Warping & Quality Metrics for 360° YUV (10-bit/16-bit) with PyTorch
 
-This repo provides:
-- YUV420 10-bit texture & 16-bit depth reader (as `uint16`),
-- ERP-based view warping with depth + relative pose (R, T),
-- Simple hole inpainting (neighbor-average),
-- WS-PSNR / PSNR / SSIM metrics on ERP,
-- A minimal demo pipeline compatible with the paper.
+This repository provides a **lightweight PyTorch pipeline** for ERP-based (Equirectangular Projection) view warping and quality evaluation on 360° video data (YUV 10-bit/16-bit).  
+It includes YUV readers, depth-guided warping, simple inpainting, and WS-PSNR/SSIM metrics — designed for research in 360° image/video quality, rendering, and depth-based view synthesis.
 
-**Author:** Yuan Yue  
+---
+
+## ✨ Features
+
+- ✅ **YUV420 10-bit texture & 16-bit depth reader** (as `uint16`)
+- ✅ **ERP-based view warping** using depth + relative pose (R, T)
+- ✅ **Hole inpainting** (simple neighbor-average filling)
+- ✅ **Quality metrics:** WS-PSNR, PSNR, SSIM for ERP domain
+- ✅ **Minimal demo pipeline** compatible with the paper’s framework
+- ✅ Cross-platform: Linux / Windows / macOS (CUDA optional)
+
+**Author:** [Yuan Yue](https://github.com/yuanaiya)  
 **License:** MIT  
 **Python:** 3.9+  
 **PyTorch:** 2.x  
-**OS:** Linux/Windows/Mac (CUDA optional)
 
-## Install
+---
+
+## Installation
 
 ```bash
+# Clone the repo
 git clone https://github.com/yuanaiya/CASSMVS/erp-warp-360.git
 cd erp-warp-360
-python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
+
+# Create and activate virtual environment
+python -m venv .venv
+source .venv/bin/activate      # Windows: .venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
+
+## Dataset (Source)
+
+All sample data used by this repo comes from the **MPEG-I Immersive Video (MIV) Content Database** (ISO/IEC MPEG official).
+
+- Official page (registration required): https://mpeg-miv.org/index.php/content-database-2/
+- Intended use: academic research and evaluation; follow the provider’s license terms.
+- Sequences used in our demo: mainly **Classroom** and **Carpark**.
+
+**Typical properties**
+- Views: 9–15 per sequence; 17 frames per view
+- Resolution: Classroom 4096×2048, Carpark 1920×1088
+- Texture: YUV420 10-bit (yuv420p10le, read as uint16)
+
+**Directory layout (example)**
+datasets/
+├─ Classroom/
+│  ├─ Texture/  v0_texture_4096x2048_yuv420p10le.yuv, v1_*.yuv, ...
+│  └─ Depth/    v0_depth_4096x2048_yuv420p16le.yuv,  v1_*.yuv, ...
+└─ Carpark/
+   ├─ Texture/  v0_texture_1920x1088_yuv420p10le.yuv, ...
+   └─ Depth/    v0_depth_1920x1088_yuv420p16le.yuv,  ...
+
