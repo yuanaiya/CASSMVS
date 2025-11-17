@@ -1,4 +1,4 @@
-# ERP Warping & Quality Metrics for 360° YUV (10-bit/16-bit) with PyTorch
+# ERP Warping & Quality Metrics for 360° YUV
 
 This repository provides a **lightweight PyTorch pipeline** for ERP-based (Equirectangular Projection) view warping and quality evaluation on 360° video data (YUV 10-bit/16-bit).  
 It includes YUV readers, depth-guided warping, simple inpainting, and WS-PSNR/SSIM metrics — designed for research in 360° image/video quality, rendering, and depth-based view synthesis.
