@@ -35,7 +35,10 @@ source .venv/bin/activate      # Windows: .venv\Scripts\activate
 # Install dependencies
 pip install -r requirements.txt
 
-## Dataset (Source)
+```
+---
+
+## Dataset
 
 All sample data used by this repo comes from the **MPEG-I Immersive Video (MIV) Content Database** (ISO/IEC MPEG official).
 
