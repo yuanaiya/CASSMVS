@@ -5,14 +5,14 @@ It includes YUV readers, depth-guided warping, simple inpainting, and WS-PSNR/SS
 
 ---
 
-## ✨ Features
+## Features
 
-- ✅ **YUV420 10-bit texture & 16-bit depth reader** (as `uint16`)
-- ✅ **ERP-based view warping** using depth + relative pose (R, T)
-- ✅ **Hole inpainting** (simple neighbor-average filling)
-- ✅ **Quality metrics:** WS-PSNR, PSNR, SSIM for ERP domain
-- ✅ **Minimal demo pipeline** compatible with the paper’s framework
-- ✅ Cross-platform: Linux / Windows / macOS (CUDA optional)
+- **YUV420 10-bit texture & 16-bit depth reader** (as `uint16`)
+- **ERP-based view warping** using depth + relative pose (R, T)
+- **Hole inpainting** (simple neighbor-average filling)
+- **Quality metrics:** WS-PSNR, PSNR, SSIM for ERP domain
+- **Minimal demo pipeline** compatible with the paper’s framework
+- Cross-platform: Linux / Windows / macOS (CUDA optional)
 
 **Author:** [Yuan Yue](https://github.com/yuanaiya)  
 **License:** MIT  
