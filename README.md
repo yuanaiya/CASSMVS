@@ -52,6 +52,7 @@ All sample data used by this repo comes from the **MPEG-I Immersive Video (MIV) 
 - Texture: YUV420 10-bit (yuv420p10le, read as uint16)
 
 **Directory layout (example)**
+```
 datasets/
 ├─ Classroom/
 │  ├─ Texture/  v0_texture_4096x2048_yuv420p10le.yuv, v1_*.yuv, ...
@@ -59,4 +60,4 @@ datasets/
 └─ Carpark/
    ├─ Texture/  v0_texture_1920x1088_yuv420p10le.yuv, ...
    └─ Depth/    v0_depth_1920x1088_yuv420p16le.yuv,  ...
-
+```
